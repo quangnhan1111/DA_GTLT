@@ -88,6 +88,10 @@ void Hoanvi(int &x, int &y)
 	y=tam;
 }
 
+
+// tim hieu cac thuat toan sap xep 
+// - linear search: O(n)
+// - binary search: O(logn)
 //---------Sap xep lua chon truc tiep (Selection Sort)----------//
 
 void selection_sort(int a[], int n)
@@ -137,7 +141,7 @@ void insert_sort(int a[], int n)
 
 void bubble_sort(int a[], int n)
 {
-	for (int i = 0; i < n ; i++)
+	for (int i = 0; i < n-1 ; i++)
 	{
 		for (int j = n-1 ; j >= i+1; j--)
 		{
