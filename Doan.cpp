@@ -92,6 +92,37 @@ void Hoanvi(int &x, int &y)
 // tim hieu cac thuat toan sap xep 
 // - linear search: O(n)
 // - binary search: O(logn)
+
+int LinearSearch(int A[], int n, int x)
+{
+    for (int i = 0; i < n; i++)
+        if (A[i] == x)
+            return i;
+    return -1; // duyệt hết mảng, không tìm thấy x
+}
+
+
+int BinarySearch(int A[], int n, int x)
+{
+    int left = 0;
+    int right = n - 1;
+    int mid;
+    while (left <= right)
+    {
+        mid = (left + right) / 2;
+        if (A[mid] == x)
+            return mid; // tìm thấy x, trả về mid là vị trí của x trong mảng A
+        if (A[mid] > x)
+            right = mid - 1; // Giới hạn khoảng tìm kiếm lại là nửa khoảng trước
+        else if (A[mid] < x)
+            left = mid + 1; // Giới hạn khoảng tìm kiếm lại là nửa khoảng sau
+    }
+    return -1; // không tìm thấy x
+}
+
+
+
+
 //---------Sap xep lua chon truc tiep (Selection Sort)----------//
 
 void selection_sort(int a[], int n)
@@ -292,11 +323,11 @@ void merge_sort(int a[], int x, int z)
 //
 //void Merge_Sort_Direct(int Array[], int n)
 //{
-//    int i, ib, ic; //c�c ch? s? tr�n m?ng Array, b, c
-//    int k = 1; //d? d�i c?a d�y con khi ph�n ho?ch
+//    int i, ib, ic; //các ch? s? trên m?ng Array, b, c
+//    int k = 1; //d? dài c?a dãy con khi phân ho?ch
 //    do
 //    {
-//        //t�ch Array th�nh b v� c
+//        //tách Array thành b và c
 //        i = ib = ic = 0;
 //        while (i < n)
 //        {
